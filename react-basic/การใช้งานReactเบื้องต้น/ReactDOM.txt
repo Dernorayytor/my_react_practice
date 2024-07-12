@@ -1,0 +1,30 @@
+ReactDOM Render HTML 
+การใช้คำสั่ง ReactDOM.Render 
+
+DOM คืออะไร
+เมื่อหน้าเว็บโหลดเสร็จแล้ว web จะสร้าง DOM หน้านั้นขึ้นมา โดยมอง HTML เป็นโครงสร้างต้นไม้(ก้อนๆ objectหรือเป็นโหนดๆ) หรือเรียกว่า DOM (Document Object Model)
+
+โดย ReactDOM จะเป็น ไลบราลี่เหมือนกับ React ที่ทำหน้าที่เฉพาะในการจัดการกับ DOM ใช้เฉพาะกับ React เท่านั้น
+คำสั่ง ReactDOM.render() จะทำการสร้าง DOM ที่เป็น virtual DOM ที่มีลักษณะโครงสร้างต้นไม้ แล้วนำโครงสร้างดังกล่าวนั้นใส่ลงไปยัง DOM ที่เป็น real DOM 
+ซึ่งเป็นวิธีการในการ render JSX ออกมาแสดงผลทางหน้าจอ JSX ก็คือเราสามารถเขียน HTML ใน JS ได้ ตัวอย่างเช่น
+ReactDOM.render(<p>Hello World</p>, document.getElementById('root')); 
+หรือ
+const data =(
+    <div>
+        <h1>Hello World</h1>
+    </div>
+);
+ReactDOM.render(data, document.getElementById('root'));
+
+โดยแก้ไขในหน้า index.js ตัวอย่างเช่น
+
+class HelloComponent extends React.Component{
+  render(){
+    return <h1> สวัสดี React</h1>
+  }
+}
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <HelloComponent/>
+); 
+มันจะไปสร้างการทำงานกับ Virtual DOM ที่ไม่ใช่ real dom หรือ browser dom
