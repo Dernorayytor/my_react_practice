@@ -1,19 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import HelloComponent from './component/HelloComponent';
+//สร้าง HelloComponent ใช้ HelloComponent
+// function HelloComponent() {
+//   return <h1>สวัสดี Component</h1>
+// }
+//สร้าง HelloComponent แบบคลาส ใช้ HelloComponent
+// class HelloComponent extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <h1>สวัสดี React</h1>
+//       </div>
+//     );
+//   }
+// }
+// ReactDOM.render(<HelloComponent/>,document.getElementById('root'));
 
-class HelloComponent extends React.Component{
-  render(){
-    return <h1> สวัสดี React</h1>
-  }
-}
-const root = ReactDOM.createRoot(document.getElementById("root")); 
-root.render(
-  <HelloComponent/>
-); 
-//ReactDOM (การเขียน ReactDOM.render ในหน้า index.js เพื่อทำงานภายใต้ Virtual DOM)
+
+// //ReactDOM (การเขียน ReactDOM.render ในหน้า index.js เพื่อทำงานภายใต้ Virtual DOM)
+// class HelloComponent extends React.Component{
+//   render(){
+//     return <h1> สวัสดี Component แบบ External</h1>
+//   }
+// }
+//   const root = ReactDOM.createRoot(document.getElementById("root")); 
+//   root.render(
+//     <HelloComponent/>
+//   ); 
 
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,7 +39,9 @@ root.render(
 //   </React.StrictMode>
 // );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// ReactDOM.render(<HelloComponent />, document.getElementById('root'));
+
+//การเรียกใช้ Component แบบใหม่ไม่มีในคลิป
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<HelloComponent/>);
 reportWebVitals();
