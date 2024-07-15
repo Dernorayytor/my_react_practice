@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import HelloComponent from './component/HelloComponent';
+import App from './App';
 //สร้าง HelloComponent ใช้ HelloComponent
 // function HelloComponent() {
 //   return <h1>สวัสดี Component</h1>
@@ -43,5 +44,5 @@ import HelloComponent from './component/HelloComponent';
 
 //การเรียกใช้ Component แบบใหม่ไม่มีในคลิป
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HelloComponent/>);
+root.render(<App/>);
 reportWebVitals();

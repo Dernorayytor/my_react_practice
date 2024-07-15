@@ -1,0 +1,35 @@
+React JSX (การเขียนโดยใช้ <div> section/article fragment หรือ <> ครอบ)
+รูปแบบการเขียน JSX
+ในพทของreturnจะเป็นhtmlแทร็ก โดยreturnใน คอมโพเน้น เขียนใน <div> / section / article / fragment หรือ react fragment / <> คือ root element ก็ได้แต่ต้องมีการกำหนด tag เปิด-ปิดทุกครั้ง
+class style ต้องระบุ attribute ใน JSX จะมีการกำหนด className แทน class เพราะ class  จะเป็น keyword
+ตัวอย่างการเขียนแบบต่างๆ
+
+รูปแบบการเขียนแบบ div
+function HelloComponent(){
+    return(
+        <div>
+            <div><h3>สวัสดี React</h3></div>
+        </div>
+    );
+}
+
+แต่เราอาจจะไม่รู้ว่าเป็น <div> นอกหรือใน ก็จะเขียนแบบนี้ได้ก็คือ
+
+รูปแบบการเขียนแบบ section/article
+function HelloComponent(){
+    return(
+        <section>
+            <article><h3>สวัสดี React</h3></article>
+        </section>
+    );
+}
+
+รูปแบบการเขียนแบบ react.fragment เป็น elementเปล่าๆ
+function HelloComponent(){
+    return(
+        <React.Fragment> หรือ <>
+            <div><h3>สวัสดี React</h3></div>
+        </React.Fragment> หรือ </>
+    );
+}
+
