@@ -1,12 +1,16 @@
+import React from 'react';
+
 const Item =()=>{
+    const name = 'ค่ารถ';
+    const amount = 300;
     return (
-    <li>ค่าเดินทาง<spa>-200</spa></li>
+        <li>{name}<span>{amount}</span></li>
 );
 }
 
 const Item2 =()=>{
     return (
-    <li>เงินเดือน<spa>+20000</spa></li>
+        <li>เงินเดือน<span>+20000</span></li>
 );
 }
 
