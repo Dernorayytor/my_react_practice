@@ -1,8 +1,7 @@
 import React from 'react';
 import "../style/item.css"
 const Item =(props)=>{
-    // const name = 'ค่ารถ';
-    // const amount = - 300;
+    
     return (
         <li >{props.title}<span>{props.amount}</span></li>
 );
