@@ -2,15 +2,15 @@ import { Item,Item2 } from "./Item";
 import "../style/Transaction.css"
 const Transaction =()=>{
     const data =[
-        {title:"ค่าอกไก่",amount:100},
-        {title:"ค่าโปรตีน",amount:1500},
-        {title:"ค่ารถ",amount:100}
+        {id:1,title:"ค่าอกไก่",amount:100},
+        {id:2,title:"ค่าโปรตีน",amount:1500},
+        {id:3,title:"ค่ารถ",amount:100}
     ]
     return (  
         <ul className="item-list">
             {/* แบบloopไม่ต้องมาคอยกำหนดเวลาเพิ่มข้อมูล*/}
             {data.map((element)=>{
-                return <Item {...element}/> //แบบใช้Spread Operator ในการลดรูป
+                return <Item {...element} key={element.id}/> //แบบใช้Spread Operator ในการลดรูป
                 
                 // <Item title={element.title} amount={element.amount}/> //แบบปกติ
 })} 
