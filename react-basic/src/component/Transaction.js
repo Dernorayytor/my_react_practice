@@ -10,7 +10,9 @@ const Transaction =()=>{
         <ul className="item-list">
             {/* แบบloopไม่ต้องมาคอยกำหนดเวลาเพิ่มข้อมูล*/}
             {data.map((element)=>{
-                return <Item title={element.title} amount={element.amount}/>
+                return <Item {...element}/> //แบบใช้Spread Operator ในการลดรูป
+                
+                // <Item title={element.title} amount={element.amount}/> //แบบปกติ
 })} 
 
             {/* <Item title={data[0].title} amount={data[0].amount}/>
