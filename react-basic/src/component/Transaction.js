@@ -1,8 +1,8 @@
 import { Item,Item2 } from "./Item";
-
+import "../style/Transaction.css"
 const Transaction =()=>{
     return (  
-        <ul>
+        <ul className="item-list">
             <Item/>
             <Item2/>
             <Item/>

@@ -1,13 +1,13 @@
-// import logo from './logo.svg';
-import './App.css';
+import './style/App.css';
 import React from 'react';
 import Transaction from './component/Transaction';
 const Title =()=><h1>โปรแกรมบัญชีรายรับ รายจ่าย</h1>;
 const Description =()=><p>บันทึกข้อมูลบัญชีในแต่ละวันๆ</p>;
 
 function App() {
+  const design = {color: "red",textAligh:"center",fontSize: '1.5rem'}
   return ( 
-    <div>
+    <div className='container'>
       <Title/>
       <Description/>
       <Transaction/>

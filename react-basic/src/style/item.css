@@ -1,0 +1,11 @@
+.item{
+    color: green;
+    text-align: center;
+    list-style-type: none;
+}
+
+.item2{
+    color: rgb(128, 0, 0);
+    text-align: center;
+    list-style-type: none;
+}
