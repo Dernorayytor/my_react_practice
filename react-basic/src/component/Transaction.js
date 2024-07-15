@@ -8,10 +8,15 @@ const Transaction =()=>{
     ]
     return (  
         <ul className="item-list">
-            <Item title={data[0].title} amount={data[0].amount}/>
+            {/* แบบloopไม่ต้องมาคอยกำหนดเวลาเพิ่มข้อมูล*/}
+            {data.map((element)=>{
+                return <Item title={element.title} amount={element.amount}/>
+})} 
+
+            {/* <Item title={data[0].title} amount={data[0].amount}/>
             <Item title={data[1].title} amount={data[1].amount}/>
             <Item title={data[2].title} amount={data[2].amount}/>
-            <Item2/>
+            <Item2/> //แบบไม่loop */} 
         </ul>
     );
   }
