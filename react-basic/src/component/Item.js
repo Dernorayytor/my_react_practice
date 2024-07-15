@@ -1,9 +1,9 @@
 import React from 'react';
 import "../style/item.css"
 const Item =(props)=>{
-    
+    const {title,amount}= props //ไม่ต้องมา props.amount เก็บไว้ เพื่อเรียกใช้ amount
     return (
-        <li >{props.title}<span>{props.amount}</span></li>
+        <li >{title}<span>{amount}</span></li>
 );
 }
 
