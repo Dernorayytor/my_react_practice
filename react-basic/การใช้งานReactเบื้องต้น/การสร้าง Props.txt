@@ -1,0 +1,4 @@
+การสร้าง Props 
+React Props
+Props หรือ Properties คือตัวแปรที่เราใช้ส่งเข้าไปยัง Component ผ่านการที่เรากำหนด Attribute ส่งผลให้ Component แต่ละตัวรับค่าจากด้านนอกเข้าไปทำงานได้
+โครงสร้าง <ชื่อComponent ชื่อPropertie=ค่าที่กำหนดให้Propertie/>

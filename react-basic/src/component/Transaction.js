@@ -3,9 +3,10 @@ import "../style/Transaction.css"
 const Transaction =()=>{
     return (  
         <ul className="item-list">
-            <Item/>
+            <Item title="ค่าข้าว" amount="70"/>
+            <Item title="ค่ารถ" amount="15"/>
+            <Item title="ค่าเสื้อผ้า" amount="1500"/>
             <Item2/>
-            <Item/>
         </ul>
     );
   }

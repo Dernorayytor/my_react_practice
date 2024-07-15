@@ -1,10 +1,10 @@
 import React from 'react';
 import "../style/item.css"
-const Item =()=>{
-    const name = 'ค่ารถ';
-    const amount = - 300;
+const Item =(props)=>{
+    // const name = 'ค่ารถ';
+    // const amount = - 300;
     return (
-        <li className='item2'>{name}<span>{amount}</span></li>
+        <li >{props.title}<span>{props.amount}</span></li>
 );
 }
 
