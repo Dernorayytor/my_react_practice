@@ -1,6 +1,18 @@
 React Hook คืออะไร
+
 State 
 คือตัวแปรที่เก็บข้อมูลภายใน component (คล้าย props)
-แต่ต่างที่ props ข้อมูลนั้นจะเปลี่ยนค่าไม่ได้
+แต่ฟ ต่างที่ props ข้อมูลนั้นจะเปลี่ยนค่าไม่ได้
 แต่ State สามารถทำได้โดยถ้าเราต้องการเปลี่ยนค่าระหว่างรันแอพก็จะใช้ ซึ่งรูปแบบเดิมจะเขียนใน class component
+statekedd คือ stage ที่ไม่เปลี่ยนค่า
+
+react Hook คือเป็นฟีดเจอร์ที่อยู่ใน react ที่ใช้จัดการเกี่ยวกับ state โดยเขียน functional component แทน class component
+การเขียน react Hook
+1เขียนใน functional component
+2เขียนในส่วนของ top level funciton 
+ตัวอย่าง react Hook
+useState useEffect useReducer useContext useMemo useCallBack
+useState
+import {useState} from 'react'
+
 
