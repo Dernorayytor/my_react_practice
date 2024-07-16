@@ -1,6 +1,7 @@
 import './style/App.css';
 import React from 'react';
 import Transaction from './component/Transaction';
+import FormComponent from './component/FromComponent';
 const Title =()=><h1>โปรแกรมบัญชีรายรับ รายจ่าย</h1>;
 const Description =()=><p>บันทึกข้อมูลบัญชีในแต่ละวันๆ</p>;
 
@@ -9,6 +10,7 @@ function App() {
   return ( 
     <div className='container'>
       <Title/>
+      <FormComponent/>
       <Description/>
       <Transaction/>
        
