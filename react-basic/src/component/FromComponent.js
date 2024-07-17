@@ -2,7 +2,7 @@ import "../style/FormComponent.css"
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-const FormComponent =()=>{
+const FormComponent =(props)=>{
     const [title,setTitle]= useState('') //รับค่าเริ่มต้นของ stategrเพื่อโชว์ Stateอยู่เบื่องหลังภายใน hooks ในส่วน components
     const [amount,setAmount]= useState(0)
     
@@ -19,7 +19,7 @@ const FormComponent =()=>{
             title:title,
             amount:Number(amount)
         }
-        console.log(itemData); //เก็บข้อมูล title,amountไว้เบื้องหลังเพื่อเก็บไปยังรูปแบบที่เรากำหนดStateไว้
+        props.onAddItem(itemData)
         setTitle('') 
         setAmount(0) //เก็บข้อมูล title,amountไว้เบื้องหลังที่กำหนดให้หลังกดจะรีเซตค่ากลับมาเริ่มต้น
     } 

@@ -13,10 +13,13 @@ function App() {
     {id:2,title:"ค่าโปรตีน",amount:1500},
     {id:3,title:"ค่ารถ",amount:100}
   ]
+  const onAddNewItem = (newItem) => {
+    console.log("ข้อมูลที่ถูกส่งมาจาก FromComponent.js = ",newItem)
+  }
   return ( 
     <div className='container'>
       <Title/>
-      <FormComponent/>
+      <FormComponent onAddItem = {onAddNewItem}/> {/*สร้างฟังก์ชั่นเพื่อรอรับค้าที่จะส่งมาจาก FromComponent.js*/}
       <Description/>
       <Transaction items = {initData}/>
        
