@@ -3,11 +3,7 @@ import "../style/Transaction.css"
 import { v4 as uuidv4 } from 'uuid';
 
 const Transaction =()=>{
-    const data =[
-        {title:"ค่าอกไก่",amount:100},
-        {title:"ค่าโปรตีน",amount:1500},
-        {title:"ค่ารถ",amount:100}
-    ]
+   
     return (  
         <ul className="item-list">
             {/* แบบloopไม่ต้องมาคอยกำหนดเวลาเพิ่มข้อมูล*/}

@@ -7,6 +7,11 @@ const Description =()=><p>บันทึกข้อมูลบัญชีใ
 
 function App() {
   const design = {color: "red",textAligh:"center",fontSize: '1.5rem'}
+  const data =[
+    {title:"ค่าอกไก่",amount:100},
+    {title:"ค่าโปรตีน",amount:1500},
+    {title:"ค่ารถ",amount:100}
+  ]
   return ( 
     <div className='container'>
       <Title/>
