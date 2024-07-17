@@ -6,6 +6,7 @@ const FormComponent =(props)=>{
     console.log("Render Form Component")
     const [title,setTitle]= useState('') //รับค่าเริ่มต้นของ stategrเพื่อโชว์ Stateอยู่เบื่องหลังภายใน hooks ในส่วน components
     const [amount,setAmount]= useState(0)
+    const [formValid,setFormValid] = useState(false)
     
     const inputTitle = (event)=>{
         setTitle(event.target.value) //หยุดการรีเฟรชหน้า เพราะปกติถ้าไม่ใส่เมื่อsubmidจะทำให้ต้องเริ่มต้นหน้าใหม่หรือคอยรีเฟชรตลอด*/
@@ -25,8 +26,9 @@ const FormComponent =(props)=>{
         setAmount(0) //เก็บข้อมูล title,amountไว้เบื้องหลังที่กำหนดให้หลังกดจะรีเซตค่ากลับมาเริ่มต้น
     } 
     useEffect(()=>{
-        console.log("call useEffect")
-    },[amount])
+        const checkData = title.trim().length > 0 && amount !==0
+            setFormValid(checkData)
+    },[title,amount])
     return(
         <div>
             <form onSubmit={saveItem}> {/*form ใช้ในการสร้างกล่อง form กล่องข้อความเพื่อกรอกข้อมูล ถ้าไม่กดในส่วนbutton ก็จะไม่ส่งค่าไปถึงแม้จะมีข้อมูลอยู่ตรง state ก็ตาม*/}
@@ -39,7 +41,7 @@ const FormComponent =(props)=>{
                     <input type="number" placeholder="ระบุจำนวนเงิน +รายรับ -รายจ่าย" onChange={inputAmount} value={amount}/> {/*ตัวเลข*/}
                 </div>
                 <div>
-                    <button type="submit" className="btn" >เพิ่มข้อมูลนี้</button> {/*การสร้างปุ่มเพื่อให้กดซับมิดได้*/}
+                    <button type="submit" className="btn" disabled={!formValid}>เพิ่มข้อมูลนี้</button> {/*การสร้างปุ่มเพื่อให้กดซับมิดได้*/}
                 </div>
             </form>
         </div>
