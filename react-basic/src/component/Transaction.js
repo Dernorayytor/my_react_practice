@@ -1,6 +1,5 @@
 import { Item,Item2 } from "./Item";
 import "../style/Transaction.css"
-import { v4 as uuidv4 } from 'uuid';
 
 const Transaction =()=>{
    
