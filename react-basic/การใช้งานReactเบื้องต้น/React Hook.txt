@@ -12,7 +12,15 @@ react Hook คือเป็นฟีดเจอร์ที่อยู่ใ
 2เขียนในส่วนของ top level funciton 
 ตัวอย่าง react Hook
 useState useEffect useReducer useContext useMemo useCallBack
+
 useState
 import {useState} from 'react'
+[ชื่อ State,ฟังก์ชั่นที่ใช้เปลี่ยนแปลงข้อมูลState]=useState(ค่าเริ่มต้นของState)
+ex
+const[name,setName]=useState('ชื่อ')
+const[age,setAge]=useState('0') ตัวเลข
+
+
+
 
 
