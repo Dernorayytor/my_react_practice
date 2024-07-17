@@ -1,11 +1,17 @@
 import { Item,Item2 } from "./Item";
 import "../style/Transaction.css"
+import DataContext from "../data/DataContext";
 
 const Transaction =(props)=>{
     const {items} = props 
    
     return (  
-        <ul className="item-list">
+        <div>
+            <DataContext.Consumer>
+               {value=><p>{value}</p>}  
+            </DataContext.Consumer>
+            
+            <ul className="item-list">
             {/* แบบloopไม่ต้องมาคอยกำหนดเวลาเพิ่มข้อมูล*/}
             {items.map((element)=>{
                 return <Item {...element} key={element.id}/> //แบบใช้Spread Operator ในการลดรูป
@@ -17,7 +23,9 @@ const Transaction =(props)=>{
             <Item title={data[1].title} amount={data[1].amount}/>
             <Item title={data[2].title} amount={data[2].amount}/>
             <Item2/> //แบบไม่loop */} 
-        </ul>
+            </ul>
+            
+        </div>
     );
   }
 

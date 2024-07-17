@@ -16,13 +16,13 @@ function App() {
       })
   }
   return ( 
-    <DataContext>
+    <DataContext.Provider value={"ข้อมูล"}>  {/*เป็นข้อมูลกลางที่สามารถดึงไปใช้ได้กัน*/}
       <div className='container'>
         <Title/>
         <FormComponent onAddItem = {onAddNewItem}/> {/*สร้างฟังก์ชั่นเพื่อรอรับค้าที่จะส่งมาจาก FromComponent.js*/}
         <Transaction items = {items}/>
       </div> {/*ถ้าไม่มี div หรือ root elementที่มาครอบ ส่วน html ที่แทรกใน retune จะเออเร่อ จะใช้ section/article ก็ได้หรือตัวไหนก็ได้ได้หมด <> ก็ได้*/}
-    </DataContext>
+    </DataContext.Provider>
      
   );
 }
