@@ -18,7 +18,7 @@ function App() {
       <Title/>
       <FormComponent/>
       <Description/>
-      <Transaction/>
+      <Transaction items = {initData}/>
        
       
       

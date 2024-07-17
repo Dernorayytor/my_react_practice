@@ -1,13 +1,14 @@
 import { Item,Item2 } from "./Item";
 import "../style/Transaction.css"
 
-const Transaction =()=>{
+const Transaction =(props)=>{
+    const {items} = props 
    
     return (  
         <ul className="item-list">
             {/* แบบloopไม่ต้องมาคอยกำหนดเวลาเพิ่มข้อมูล*/}
-            {data.map((element)=>{
-                return <Item {...element} key={uuidv4()}/> //แบบใช้Spread Operator ในการลดรูป
+            {items.map((element)=>{
+                return <Item {...element} key={element.id}/> //แบบใช้Spread Operator ในการลดรูป
                 
                 // <Item title={element.title} amount={element.amount}/> //แบบปกติ
 })} 
