@@ -10,9 +10,9 @@ const Description =()=><p>บันทึกข้อมูลบัญชีใ
 function App() {
   const design = {color: "red",textAligh:"center",fontSize: '1.5rem'}
   const initData =[
-    {id:1,title:"ค่าอกไก่",amount:100},
-    {id:2,title:"ค่าโปรตีน",amount:1500},
-    {id:3,title:"ค่ารถ",amount:100}
+    {id:1,title:"ค่าอกไก่",amount:-100},
+    {id:2,title:"ค่าโปรตีน",amount:-1500},
+    {id:3,title:"ค่ารถ",amount:-100}
   ]
   const [items,setItems] = useState(initData) //ค่าเริ่มต้นตาม initData ตามอาเรนั้นๆเพื่อให้บันทึก newItem id:,title:,amount:
   const onAddNewItem = (newItem) => {
