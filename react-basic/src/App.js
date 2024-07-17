@@ -2,6 +2,7 @@ import './style/App.css';
 import React from 'react';
 import Transaction from './component/Transaction';
 import FormComponent from './component/FromComponent';
+import { useState } from 'react';
 
 const Title =()=><h1>โปรแกรมบัญชีรายรับ รายจ่าย</h1>;
 const Description =()=><p>บันทึกข้อมูลบัญชีในแต่ละวันๆ</p>;
@@ -13,15 +14,18 @@ function App() {
     {id:2,title:"ค่าโปรตีน",amount:1500},
     {id:3,title:"ค่ารถ",amount:100}
   ]
+  const [items,setItems] = useState(initData) //ค่าเริ่มต้นตาม initData ตามอาเรนั้นๆเพื่อให้บันทึก newItem id:,title:,amount:
   const onAddNewItem = (newItem) => {
-    console.log("ข้อมูลที่ถูกส่งมาจาก FromComponent.js = ",newItem)
+    setItems((prevItem) => {
+      return [newItem, ...prevItem]
+      })
   }
   return ( 
     <div className='container'>
       <Title/>
       <FormComponent onAddItem = {onAddNewItem}/> {/*สร้างฟังก์ชั่นเพื่อรอรับค้าที่จะส่งมาจาก FromComponent.js*/}
       <Description/>
-      <Transaction items = {initData}/>
+      <Transaction items = {items}/>
        
       
       
