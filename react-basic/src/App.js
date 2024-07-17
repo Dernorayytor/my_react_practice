@@ -5,7 +5,6 @@ import FormComponent from './component/FromComponent';
 import { useState } from 'react';
 
 const Title =()=><h1>โปรแกรมบัญชีรายรับ รายจ่าย</h1>;
-const Description =()=><p>บันทึกข้อมูลบัญชีในแต่ละวันๆ</p>;
 
 function App() {
   const design = {color: "red",textAligh:"center",fontSize: '1.5rem'}
@@ -19,7 +18,6 @@ function App() {
     <div className='container'>
       <Title/>
       <FormComponent onAddItem = {onAddNewItem}/> {/*สร้างฟังก์ชั่นเพื่อรอรับค้าที่จะส่งมาจาก FromComponent.js*/}
-      <Description/>
       <Transaction items = {items}/>
        
       
