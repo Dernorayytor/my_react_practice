@@ -7,4 +7,4 @@ Children to Parent (Bottom-Up)
 ตัว Transaction จะดึง Item มาใช้ โดย App เป็น Componentแม่ ที่ดึงข้อมูลจากการที่ Transaction เป็น Componentลูก ดึง Itemที่อยู่ล่างกว่า และ FormComponent ที่อยู่ระดับเดียวกันกับ Transaction 
 โดยที่ Transaction และ FormComponent ที่อยู่ระดับเดียวกันที่เป็นตัวลูกก็จะไม่สามารถส่งหากันได้ แต่จะส่งหากันได้ก็ต่อเมื่อมีการ Bottom-Up 
 เช่น FormComponent Bottom-Up กลับไปหา App Componentแม่ ที่มีการสร้าง state รับข้อมูลไว้ เพื่อให้ App Prop ส่งไปหา Transaction ได้
-ดังนั้น Transaction และ FormComponent จึงส่งข้อมูลหากันได้ด้วยการ Bottom-Up Prop state
+ดังนั้น Transaction และ FormComponent จึงส่งข้อมูลหากันได้ด้วยการ Bottom-Up ไปเก็บข้อมูลใน state และมี Item ใหม่
