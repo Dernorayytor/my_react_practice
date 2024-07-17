@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'; // ES6
 
 const Item =(props)=>{
     const {title,amount}= props //ไม่ต้องมา props.amount เก็บไว้ เพื่อเรียกใช้ amount
-    const status = amount<0 ? 'รายจ่าย' : 'รายรับ'
+    const status = amount<0 ? 'expense' : 'income'
     return (
-        <li >{status}{title}<span>{amount}</span></li>
+        <li className={status}>{title}<span>{amount}</span></li>
 );
 }
 

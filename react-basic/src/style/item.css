@@ -1,11 +1,7 @@
-.item{
-    color: green;
-    text-align: center;
-    list-style-type: none;
+.expense{
+   border-left: 5px solid red;
 }
 
-.item2{
-    color: rgb(128, 0, 0);
-    text-align: center;
-    list-style-type: none;
+.income{
+    border-left: 5px solid green;
 }
