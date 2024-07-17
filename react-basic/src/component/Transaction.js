@@ -1,15 +1,14 @@
 import { Item,Item2 } from "./Item";
 import "../style/Transaction.css"
 import DataContext from "../data/DataContext";
+import { useContext } from "react";
 
 const Transaction =(props)=>{
     const {items} = props 
-   
+    const nameContext = useContext(DataContext)
     return (  
         <div>
-            <DataContext.Consumer>
-               {value=><p>{value}</p>}  
-            </DataContext.Consumer>
+            {nameContext}
             
             <ul className="item-list">
             {/* แบบloopไม่ต้องมาคอยกำหนดเวลาเพิ่มข้อมูล*/}

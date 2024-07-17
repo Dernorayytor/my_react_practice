@@ -16,7 +16,7 @@ function App() {
       })
   }
   return ( 
-    <DataContext.Provider value={"ข้อมูล"}>  {/*เป็นข้อมูลกลางที่สามารถดึงไปใช้ได้กัน*/}
+    <DataContext.Provider value={"จนๆๆๆ55รวยบ้าง"}>  {/*เป็นข้อมูลกลางที่สามารถดึงไปใช้ได้กัน*/}
       <div className='container'>
         <Title/>
         <FormComponent onAddItem = {onAddNewItem}/> {/*สร้างฟังก์ชั่นเพื่อรอรับค้าที่จะส่งมาจาก FromComponent.js*/}

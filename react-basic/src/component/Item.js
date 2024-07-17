@@ -2,16 +2,16 @@ import React from 'react';
 import "../style/item.css"
 import PropTypes from 'prop-types'; // ES6
 import DataContext from './../data/DataContext';
+import { useContext } from 'react';
 
 const Item =(props)=>{
     const {title,amount}= props //ไม่ต้องมา props.amount เก็บไว้ เพื่อเรียกใช้ amount
     const status = amount<0 ? 'expense' : 'income'
     const symbol = amount<0 ? '-' : '+' //หรือ amount<0 ? '' : '+' ถ้าไม่ใช้ Math.abs(amount)
+    const nameContext = useContext(DataContext)
     return (
         <li className={status}>{title}<span>{symbol}{Math.abs(amount)}</span>
-        <DataContext.Consumer>
-               {value=><p>{value}</p>}  
-        </DataContext.Consumer>
+        {nameContext}
         </li>
 );
 }
