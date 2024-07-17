@@ -1,5 +1,6 @@
 import "../style/FormComponent.css"
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const FormComponent =()=>{
     const [title,setTitle]= useState('') //รับค่าเริ่มต้นของ stategrเพื่อโชว์ Stateอยู่เบื่องหลังภายใน hooks ในส่วน components
@@ -14,6 +15,7 @@ const FormComponent =()=>{
     const saveItem = (event)=>{
         event.preventDefault() 
         const itemData = {
+            id:uuidv4(),
             title:title,
             amount:Number(amount)
         }
