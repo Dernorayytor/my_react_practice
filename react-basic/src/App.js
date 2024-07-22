@@ -1,5 +1,5 @@
 import './style/App.css';
-import React, { useEffect,useState ,useReducer} from 'react';
+import React, { useEffect,useState} from 'react';
 import Transaction from './component/Transaction';
 import FormComponent from './component/FromComponent';
 import DataContext from './data/DataContext';
@@ -29,17 +29,7 @@ function App() {
     setReportIncome(income)
   },[items,ReportIncome,ReportExpense]) //ทุกครั้งที่ items มีการเปลี่ยนแปลงให้ทำงานใน useEffect ด้านล่า��
   
-  //reducer state
-  const [show,setShow] = useState([])
-  const reducer = (state,action)=>{
-        switch(action.type){
-          case 'SHOW' :
-            return setShow(true)
-          case 'HIDE' :
-            return setShow(false)
-        }
-  }
-  const [result,dispatch] = useReducer(reducer,show)
+  
   return ( 
     <DataContext.Provider value={
       {
@@ -49,12 +39,9 @@ function App() {
     }>  {/*เป็นข้อมูลกลางที่สามารถดึงไปใช้ได้กัน*/}
       <div className='container'>
         <Title/>
-        {show && <ReportComponent/>}
+        <ReportComponent/>
         <FormComponent onAddItem = {onAddNewItem}/> {/*สร้างฟังก์ชั่นเพื่อรอรับค้าที่จะส่งมาจาก FromComponent.js*/}
         <Transaction items = {items}/>
-        <h1>{result}</h1>
-        <button onClick={()=>dispatch({type:"SHOW"})}>แสดง</button>
-        <button onClick={()=>dispatch({type:"HIDE"})}>ปิด</button>
       </div> {/*ถ้าไม่มี div หรือ root elementที่มาครอบ ส่วน html ที่แทรกใน retune จะเออเร่อ จะใช้ section/article ก็ได้หรือตัวไหนก็ได้ได้หมด <> ก็ได้*/}
     </DataContext.Provider>
   
