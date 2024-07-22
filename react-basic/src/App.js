@@ -34,18 +34,20 @@ function App() {
     <DataContext.Provider value={{income: ReportIncome,expense:ReportExpense}}>  {/*เป็นข้อมูลกลางที่สามารถดึงไปใช้ได้กัน*/}
       <div className='container'>
         <Title/>
+        <Router>
         <div>
             <div>
               <ul className='holizontal-menu'>
                 <li>
-                  <a href="#">ข้อมูลบัญชี</a>
+                  <Link to="">ข้อมูลบัญชี</Link>
                 </li>
                 <li>
-                  <a href="#">บันทึกข้อมูลบัญชี</a>
+                  <Link to="">บันทึกข้อมูลบัญชี</Link>
                 </li>
               </ul>
             </div>
         </div>
+        </Router>
         <ReportComponent/>
         <FormComponent onAddItem = {onAddNewItem}/> {/*สร้างฟังก์ชั่นเพื่อรอรับค้าที่จะส่งมาจาก FromComponent.js*/}
         <Transaction items = {items}/>
