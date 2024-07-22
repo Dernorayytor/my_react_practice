@@ -5,7 +5,7 @@ import FormComponent from './component/FromComponent';
 import DataContext from './data/DataContext';
 import ReportComponent from './component/ReportComponent';
 import { element } from 'prop-types';
-
+import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom"
 const Title =()=><h1>โปรแกรมบัญชีรายรับ รายจ่าย</h1>;
 
 function App() {
@@ -31,14 +31,21 @@ function App() {
   
   
   return ( 
-    <DataContext.Provider value={
-      {
-        income: ReportIncome,
-        expense:ReportExpense
-      }
-    }>  {/*เป็นข้อมูลกลางที่สามารถดึงไปใช้ได้กัน*/}
+    <DataContext.Provider value={{income: ReportIncome,expense:ReportExpense}}>  {/*เป็นข้อมูลกลางที่สามารถดึงไปใช้ได้กัน*/}
       <div className='container'>
         <Title/>
+        <div>
+            <div>
+              <ul className='holizontal-menu'>
+                <li>
+                  <a href="#">ข้อมูลบัญชี</a>
+                </li>
+                <li>
+                  <a href="#">บันทึกข้อมูลบัญชี</a>
+                </li>
+              </ul>
+            </div>
+        </div>
         <ReportComponent/>
         <FormComponent onAddItem = {onAddNewItem}/> {/*สร้างฟังก์ชั่นเพื่อรอรับค้าที่จะส่งมาจาก FromComponent.js*/}
         <Transaction items = {items}/>
