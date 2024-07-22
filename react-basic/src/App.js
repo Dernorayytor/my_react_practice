@@ -12,14 +12,8 @@ const Title =()=><h1>โปรแกรมบัญชีรายรับ ร�
 function App() {
   const design = {color: "red",textAligh:"center",fontSize: '1.5rem'}
   
-  const initState = [
-    {id:1,title:"ค่าเช่ารถ",amount:-2000},
-    {id:1,title:"ค่าน้ำมัน",amount:-500},
-    {id:1,title:"ค่าไก่ไม้",amount:-20},
-    {id:1,title:"ขายส้มตำ",amount:2000},
-  ]
 
-  const [items,setItems] = useState(initState) //ค่าเริ่มต้นตาม initData ตามอาเรนั้นๆเพื่อให้บันทึก newItem id:,title:,amount:
+  const [items,setItems] = useState([]) //ค่าเริ่มต้นตาม initData ตามอาเรนั้นๆเพื่อให้บันทึก newItem id:,title:,amount:
   
   const [ReportIncome,setReportIncome] = useState(0)
   const [ReportExpense,setReportExpense] = useState(0)
@@ -32,14 +26,14 @@ function App() {
     const amounts = items.map(items => items.amount)
     const income = amounts.filter(element=>element>0).reduce((total,element)=>total+=element,0)
     const expense = amounts.filter(element=>element<0).reduce((total,element)=>total-=element,0)
-    console.log('ยอดรายได้',income)
-    console.log('ยอดจ่ายได้',expense)
-  },[items])
+    setReportExpense(expense)
+    setReportIncome(income)
+  },[items,ReportIncome,ReportExpense]) //ทุกครั้งที่ items มีการเปลี่ยนแปลงให้ทำงานใน useEffect ด้านล่า��
   return ( 
     <DataContext.Provider value={
       {
-        income: 50000,
-        expense:8000
+        income: ReportIncome,
+        expense:ReportExpense
       }
     }>  {/*เป็นข้อมูลกลางที่สามารถดึงไปใช้ได้กัน*/}
       <div className='container'>
