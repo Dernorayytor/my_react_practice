@@ -1,12 +1,8 @@
 import { Item,Item2 } from "./Item";
 import "../style/Transaction.css"
-import DataContext from "../data/DataContext";
-import { useContext } from "react";
-
 
 const Transaction =(props)=>{
     const {items} = props 
-    const {income,expense} = useContext(DataContext)
     return (  
         <div>
             
@@ -24,8 +20,7 @@ const Transaction =(props)=>{
             <Item title={data[2].title} amount={data[2].amount}/>
             <Item2/> //แบบไม่loop */} 
             </ul>
-            <p>รายรับ : {income}</p>
-            <p>รายจ่าย : {expense}</p>
+            
         </div>
     );
   }
