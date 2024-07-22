@@ -17,7 +17,12 @@ function App() {
       })
   }
   return ( 
-    <DataContext.Provider value={"คุณรวยๆ"}>  {/*เป็นข้อมูลกลางที่สามารถดึงไปใช้ได้กัน*/}
+    <DataContext.Provider value={
+      {
+        income: 50000,
+        expense:8000
+      }
+    }>  {/*เป็นข้อมูลกลางที่สามารถดึงไปใช้ได้กัน*/}
       <div className='container'>
         <Title/>
         <ReportComponent/>
